@@ -1,0 +1,32 @@
+
+.tableHead {
+    border-bottom: 1px solid #959799;
+    background-color: #eeeeee;
+    color: #a40000;
+}
+
+.tableBody tr:last-of-type {
+    border-top: 1px solid #959799;
+    background-color: #eeeeee;
+    color: 4d0000;
+}
+
+td {
+    border-bottom: 1px dotted #e4e4e4;
+    border-right: 1px solid #e2e2e2;
+}
+
+tr td:last-of-type {
+    border-right: none;
+}
+
+td, th {
+    padding: 5px;
+}
+
+.teamsTable {
+    border: 1px solid #959799;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
