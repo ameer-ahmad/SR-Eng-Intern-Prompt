@@ -1,13 +1,27 @@
 let table = document.querySelector(".teamsTable")
 let tableBody = document.querySelector(".tableBody")
+let tableHead = document.querySelector(".tableHead")
 
 fetch("./data.json")
     .then(Res => Res.json())
     .then(data => {
+        // Store team names
         const teams = Object.keys(data)
 
+        // Create table header
+        let headerRow = document.createElement("tr")
+        let headerData = document.createElement("th")
+        let headerText = document.createTextNode("Tm")
+        headerData.appendChild(headerText)
+        headerRow.appendChild(headerData)
+
         for (let team1 of teams) {
-            console.log(data[team1])
+
+            headerText = document.createTextNode(team1)
+            let headerData2 = document.createElement("th")
+            headerData2.appendChild(headerText)
+            headerRow.appendChild(headerData2)
+
             let tableRow = document.createElement("tr")
             let tableData = document.createElement("td")
             let text  = document.createTextNode(team1)
@@ -27,6 +41,9 @@ fetch("./data.json")
 
             tableBody.appendChild(tableRow)
         }
+        tableHead.appendChild(headerRow)
+        tableBody.appendChild(headerRow.cloneNode(true))
+
  
     })
     .catch(err => {
